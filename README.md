@@ -107,8 +107,12 @@ Before you begin, note that this project does require soldering and cutting the 
 
 This project requires the following dependencies to be installed through the library manager
 
- - ArduinoJson 7.2.0
- - ESPAsyncWebSrv 1.2.8
+ - ArduinoJson 7.2.0 by Benoit Blanchon 
+ - ESPAsyncWebSrv 1.2.8 by dvarrel
+
+**NOTE:** When you attempt to install ESPAsyncWebSrv you will likely be asked to install the dependancies AsyncTCP and ESPAsyncTCP as well so you would have the following libraries and versions installed.
+
+![](images/arduino_libraries.png)
 
  You also need to install the ESP32 board package 3.0+. Go to `File -> Preferences` and add the following URL to `Additional Boards Manager URLs`
 
@@ -150,6 +154,8 @@ Now you can just flash it like any other arduino.
 ## Building with PlatformIO
 
 Assuming you already have PlatformIO installed, there shouldn't be anything else you need to do before building and flashing. Just select Build or Upload under the EzSBC environment.
+
+The library [ESPAsyncWebSrv by dvarrel](https://github.com/dvarrel/ESPAsyncWebSrv) isn't available for PlatformIO so instead the [orginial version by me-no-dev](https://github.com/me-no-dev/ESPAsyncWebServer) is [referenced](https://registry.platformio.org/libraries/me-no-dev/ESPAsyncWebServer) instead. Note that there are much later versions available as well as other forks of this library but this version is used as it's the closest to dvarrel's fork, however if you have problems such as with later ESP boards/SDK's you might want to try a later version of this library.  
 
 To enable debug logs, add `-DCORE_DEBUG_LEVEL=3` as a build flag in [platformio.ini](platformio.ini) (it should already be there as a line you can uncomment).
 
